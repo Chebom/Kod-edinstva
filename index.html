@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102a2c">
+  <meta name="description" content="Пять точек Выборгской стороны — интерактивный видеопутеводитель школьной команды № 475.">
+  <title>Код единства: Выборгская сторона</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="На главную">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+      <span>КОД <em>ЕДИНСТВА</em></span>
+    </a>
+    <nav class="top-nav" aria-label="Навигация"><a href="#places">Наши места</a><a href="#about">О проекте</a></nav>
+    <div class="school-chip"><span class="school-chip-dot"></span><span>Медиапроект школы № 475</span></div>
+  </header>
+
+  <main id="top">
+    <section class="hero wrapper" aria-labelledby="heroTitle">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="line"></span> САНКТ-ПЕТЕРБУРГ · ВЫБОРГСКИЙ РАЙОН</div>
+        <h1 id="heroTitle">Код единства:<br><span class="hero-accent">Выборгская сторона</span></h1>
+        <p class="hero-lead">Мы исследовали пять точек на карте нашего района, чтобы найти следы разных культур и народов. Отправились туда с камерой и сняли реальные истории единства. Нажмите на место — и посмотрите на него нашими глазами.</p>
+        <a class="hero-cta" href="#places"><span>Исследовать карту</span><span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="hero-orbit orbit-a"></div><div class="hero-orbit orbit-b"></div>
+        <span class="hero-blob blob-one"></span><span class="hero-blob blob-two"></span>
+        <div class="ticket-stamp"><span>НАШ<br>МАРШРУТ</span><b>05</b><small>МЕСТ</small></div>
+        <span class="art-spark spark-a">✳</span><span class="art-spark spark-b">✶</span>
+        <div class="art-coords">60° N / 30° E<br>ИСТОРИИ РЯДОМ</div>
+      </div>
+    </section>
+
+    <section id="places" class="explore-section">
+      <div class="wrapper">
+        <div class="section-heading">
+          <div><div class="section-kicker">01 / ИССЛЕДУЙТЕ РАЙОН</div><h2>Выберите свою точку</h2></div>
+          <p>Пять сюжетов, пять важных мест —<br>от парков до улиц с живой историей.</p>
+        </div>
+        <div class="explorer-layout">
+          <aside class="places-pane" aria-label="Список пяти мест">
+            <div class="places-pane-title"><span>Наши истории</span><span class="count-badge">05</span></div>
+            <div id="placeList" class="place-list"></div>
+            <div class="list-bottom"><span class="mini-star" aria-hidden="true">✳</span><span>Маленькое путешествие<br>по большому району</span></div>
+          </aside>
+          <div class="map-card">
+            <div class="map-card-head">
+              <div><span class="section-kicker">ИНТЕРАКТИВНЫЙ ПУТЕВОДИТЕЛЬ</span><h3>Карта историй <span class="orange-dot">●</span></h3></div>
+              <div class="map-view-controls"><button id="resetMap" class="map-reset" type="button" title="Показать все точки">⤢ <span>Все точки</span></button><span class="map-card-tag">5 МЕСТ</span></div>
+            </div>
+            <div id="mapStage" class="map-stage" aria-label="Схематическая карта пяти точек Выборгской стороны">
+              <svg class="map-backdrop" viewBox="0 0 850 690" preserveAspectRatio="none" aria-hidden="true">
+                <defs>
+                  <pattern id="cityGrid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="#c7d2c6" stroke-opacity=".4" stroke-width="1"/></pattern>
+                  <pattern id="smallDots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.05" fill="#98aca1" opacity=".4"/></pattern>
+                </defs>
+                <rect width="850" height="690" fill="#e9eee6"/>
+                <rect width="850" height="690" fill="url(#cityGrid)"/>
+                <g fill="#b2d4bd" opacity=".78"><path d="M386 17C437-12 562 7 625 67C661 101 662 167 623 194C572 231 460 207 414 173C358 131 347 51 386 17Z"/><path d="M556 465C619 423 757 432 816 487C856 525 863 611 806 662C748 706 625 693 588 638C552 584 516 502 556 465Z"/><path d="M20 318C59 284 132 294 156 347C180 399 150 471 105 483C58 497 16 475-17 434Z"/></g>
+                <g fill="none" stroke="#b6d9e2" stroke-width="19" opacity=".93" stroke-linecap="round"><path d="M-34 234C72 232 88 267 180 257S284 196 332 220S399 329 480 318S632 247 760 284S817 289 907 257"/></g>
+                <g fill="none" stroke="#e9f5f6" stroke-width="8" opacity=".96" stroke-linecap="round"><path d="M-34 234C72 232 88 267 180 257S284 196 332 220S399 329 480 318S632 247 760 284S817 289 907 257"/></g>
+                <g fill="none" stroke="#f8faf4" stroke-width="24" opacity=".92" stroke-linecap="round" stroke-linejoin="round"><path d="M-30 55C138 123 205 98 305 155S462 227 510 370S635 570 876 632"/><path d="M-10 569C122 542 233 509 322 472S518 423 857 412"/><path d="M202 -22C265 83 241 227 290 294S401 440 376 720"/><path d="M640 -15C586 123 684 262 646 369S692 569 732 713"/></g>
+                <g fill="none" stroke="#cbd4cb" stroke-width="1.5" opacity=".78"><path d="M-30 55C138 123 205 98 305 155S462 227 510 370S635 570 876 632"/><path d="M-10 569C122 542 233 509 322 472S518 423 857 412"/><path d="M202 -22C265 83 241 227 290 294S401 440 376 720"/><path d="M640 -15C586 123 684 262 646 369S692 569 732 713"/></g>
+                <g fill="none" stroke="#e9f0e9" stroke-width="11" opacity=".7"><path d="M78 -12L147 712M440 -12L480 702M-10 380L878 340M-30 624L884 540"/></g>
+                <g fill="#60927c" opacity=".30"><circle cx="480" cy="92" r="66"/><circle cx="478" cy="92" r="93" stroke="#60927c" fill="none" stroke-width="1"/><circle cx="680" cy="558" r="69"/><circle cx="680" cy="558" r="96" stroke="#60927c" fill="none" stroke-width="1"/></g>
+                <g font-family="Arial,sans-serif" fill="#6b8880" font-size="13" font-weight="700" letter-spacing="2"><text x="438" y="28">ШУВАЛОВО</text><text x="283" y="279">ОЗЕРКИ</text><text x="413" y="377">УДЕЛЬНАЯ</text><text x="566" y="623">ЛЕСНАЯ</text><text x="40" y="657">ВЫБОРГСКИЙ РАЙОН</text></g>
+                <g font-family="Arial,sans-serif" fill="#839e9a" font-size="12" letter-spacing="1.2"><text transform="translate(297 164) rotate(64)">ВЫБОРГСКОЕ ШОССЕ</text><text transform="translate(339 495) rotate(-11)">ГОРОДСКИЕ УЛИЦЫ</text><text x="12" y="249">СУЗДАЛЬСКИЕ ОЗЁРА</text></g>
+              </svg>
+              <div class="map-north" aria-hidden="true">↑<small>С</small></div>
+              <div id="mapPins" class="map-pins"></div>
+              <div id="realMap" class="real-map" aria-label="Подробная карта OpenStreetMap"></div>
+              <div class="map-legend"><span class="legend-dot"></span><span>Нажмите на метку, чтобы открыть видео</span></div>
+              <div class="map-bottom-controls"><button id="toggleOnlineMap" type="button" class="map-online-btn" title="Переключить на подробную онлайн-карту"><span>◈</span> <span id="mapSwitchText">Подробная карта</span></button><div class="map-scale">СХЕМА · НЕ ДЛЯ НАВИГАЦИИ</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="map-note"><span>ⓘ</span> Метки на схеме показывают примерное расположение объектов. Для точной навигации откройте карточку места и перейдите к карте.</div>
+      </div>
+    </section>
+
+    <section id="about" class="about-section wrapper">
+      <div class="about-sign">✳</div><div class="about-copy"><div class="section-kicker">02 / О НАШЕМ ПРОЕКТЕ</div><h2>Не просто точки.<br><em>Люди, места и истории.</em></h2><p>Этот путеводитель — результат работы школьной команды. Мы сами исследуем Выборгскую сторону, снимаем видео и делимся тем, что делает привычные места особенными.</p></div>
+      <div class="about-credit"><span>СДЕЛАНО С ЛЮБОПЫТСТВОМ</span><strong>ШКОЛА<br>№ 475</strong><span>САНКТ-ПЕТЕРБУРГ</span></div>
+    </section>
+  </main>
+  <footer class="footer"><div class="wrapper footer-inner"><span>КОД ЕДИНСТВА © <span id="copyrightYear">2026</span></span><span>5 локаций. 1 район. Истории единства.</span><a href="#top">Наверх ↑</a></div></footer>
+
+  <div id="modal" class="modal" hidden>
+    <div class="modal-shade" data-close="true"></div>
+    <div class="modal-shell" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button type="button" class="modal-close" id="closeModal" aria-label="Закрыть видео">✕</button>
+      <div class="modal-media"><div class="modal-media-inner">
+        <video id="videoPlayer" controls playsinline preload="metadata" hidden></video>
+        <iframe id="videoFrame" title="Видеосюжет" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen hidden></iframe>
+        <div id="videoPlaceholder" class="video-placeholder"><div class="video-placeholder-icon">▶</div><div class="placeholder-eyebrow">НАШ ВИДЕОСЮЖЕТ</div><h3 id="placeholderTitle">История скоро появится здесь</h3><p id="placeholderInfo">Добавьте видео в папку проекта, чтобы оно появилось в этом окне.</p></div>
+      </div><span class="media-decoration">КОД ЕДИНСТВА / 475</span><a id="videoExternal" class="video-external-link" href="#" target="_blank" rel="noopener noreferrer" hidden>Открыть в VK Видео ↗</a></div>
+      <div class="modal-details"><div class="modal-kicker" id="modalCounter">ИСТОРИЯ 01 / 05</div><div id="modalCategory" class="modal-category">Природа и история</div><h2 id="modalTitle">Место</h2><p id="modalDescription"></p><div class="modal-address"><span>📍</span><div><small>МЕСТОПОЛОЖЕНИЕ</small><strong id="modalAddress"></strong></div></div><a id="modalMapLink" href="#" target="_blank" rel="noopener noreferrer" class="modal-map-link">Открыть на Яндекс Картах ↗</a><div class="modal-stepper"><button type="button" id="prevPlace" aria-label="Предыдущее место">← <span>Предыдущее</span></button><span id="modalStep">01 / 05</span><button type="button" id="nextPlace" aria-label="Следующее место"><span>Следующее</span> →</button></div></div>
+    </div>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js" defer></script>
+</body>
+</html>
